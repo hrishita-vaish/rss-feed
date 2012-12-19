@@ -1,0 +1,21 @@
+<%= form_for(@newsboard) do |f| %>
+  <% if @newsboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@newsboard.errors.count, "error") %> prohibited this newsboard from being saved:</h2>
+
+      <ul>
+      <% @newsboard.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div id="rss">
+  <script type="text/javascript" src="http://app.feed.informer.com/digest3/XR5SQY9NL5.js"></script>
+<noscript><a href="http://app.feed.informer.com/digest3/XR5SQY9NL5.html">Click for &quot;Your New Digest 1&quot;.</a>
+Powered by <a href="http://feed.informer.com/">RSS Feed Informer</a></noscript>
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
